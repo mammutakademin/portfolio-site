@@ -1,11 +1,10 @@
 import * as React from "react"
+import styled from "styled-components"
 import { graphql } from "gatsby"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import styled from "styled-components"
-import Navbar from "../components/navbar"
 import Layout from "../components/layout"
 
-const AboutMeWrapper = styled.main`
+const AboutMeWrapper = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   display: flex;
@@ -27,7 +26,6 @@ const AboutMePage = ({ data }) => {
 
   return (
     <Layout>
-        {/* <Navbar /> */}
         <AboutMeWrapper>
             <h1>{data.contentfulAboutMe.title}</h1>
             <h2>{data.contentfulAboutMe.presentationText.presentationText}</h2>

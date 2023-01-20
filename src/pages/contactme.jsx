@@ -10,17 +10,20 @@ const Main = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 2rem;
+  margin: 20px 20px;
   text-align: center;
   h1 {
     font-size: 64px;
     margin: 10% 0 0 0;
   }
-  p {
-    font-size: 36px;
-  }
   a {
     text-decoration: none;
+    font-size: 1rem;
+    padding: 5px;
+    color: rgb(20, 21, 23);
+    &:hover {
+      color: rgb(115, 95, 82);
+    }
   }
 `
 
@@ -32,7 +35,7 @@ const ContactMePage = ({ data }) => {
             <h1>{data.contentfulContact.title}</h1>
             <img src={data.contentfulContact.featuredImage.resize.src} alt={data.contentfulContact.title} />
         
-            <p><a href={`mailto:${data.contentfulContact.emailAddress}`}>Email</a></p>
+            <a href={`mailto:${data.contentfulContact.emailAddress}`}>Email</a>
             <a href={data.contentfulContact.githubAccount} target="_blank" rel="noreferrer">Github</a>
             <a href={data.contentfulContact.linkedInAccount} target="_blank" rel="noreferrer">LinkedIn</a>
             <a href={data.contentfulContact.website} target="_blank" rel="noreferrer">Website</a>

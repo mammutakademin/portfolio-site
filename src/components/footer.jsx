@@ -11,9 +11,11 @@ const FooterWrapper = styled.footer`
 
 const Footer = () => {
   return (
-    <FooterWrapper>
-      <p>Copyright &copy; by Editha Trinitaria, {new Date().getFullYear()}</p>
-    </FooterWrapper>
+    <div>
+      <FooterWrapper>
+        <p>Copyright &copy; by Editha Trinitaria, {new Date().getFullYear()}</p>
+      </FooterWrapper>
+    </div>
   )
 }
 

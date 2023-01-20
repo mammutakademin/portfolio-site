@@ -14,6 +14,7 @@ const Main = styled.main`
   h1 {
     font-size: 64px;
     margin: 10% 0 0 0;
+    color: rgb(32, 29, 30);
   }
   p {
     font-size: 36px;
@@ -28,10 +29,9 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Main>
-          {/* <Navbar /> */}
           <h1>{data.contentfulHomePage.title}</h1>
           <h2>{data.contentfulHomePage.presentationText.presentationText}</h2>
-          <img src={data.contentfulHomePage.image.url} height={800} alt={data.contentfulHomePage.title} />
+          <img src={data.contentfulHomePage.image.url} height={400} alt={data.contentfulHomePage.title} />
       </Main>
     </Layout>
   )

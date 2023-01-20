@@ -1,16 +1,14 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const Wrapper = styled.div`
-  max-width: 1000px;
+  max-width: 80%;
   margin: 0 auto;
   text-align: center;
-  h1 {
-    margin: 0;
-  }
+  
   a {
-    color: white;
+    color: gray;
   }
 `
 
@@ -18,12 +16,10 @@ const NotFoundPage = () => {
 
     return (
       <main>
-          <Link to="/">Home</Link>
-          <Link to="/portfolio/">Portfolio</Link>
-          <Link to="/contactme/">Contact</Link>
-          <Wrapper>
-            <h2>Page not found.</h2>
-          </Wrapper>
+            <Wrapper>
+              <h2>Ooops! The page you are looking for has been removed or relocated.</h2>
+              <Link to="/">Go Back</Link>
+            </Wrapper>
       </main>
     )
   }

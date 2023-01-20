@@ -1,18 +1,20 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import styled from "styled-components"
+import Layout from "../components/layout"
 
 const SingleWorkPage = ({ data }) => {
+  
     const work = data.contentfulWork
 
     return (
-        <main>
-            <Link to="/">Home</Link>
-            <Link to="/portfolio/">Portfolio</Link>
+        <Layout>
             <h1>{work.title}</h1>
-            <img src={work.featuredImage.url} alt="featured work" />
+            <img src={work.featuredImage.url} width={900} alt={work.title} />
             <p>{work.description.description}</p>
-        </main>
+            <a href={work.link} target="_blank" rel="noreferrer">{work.title}</a>
+            <p>{work.projectCategory}</p>
+        </Layout>
     )
 }
 
@@ -31,6 +33,7 @@ export const query = graphql`
       description {
         description
       }
+      projectCategory
     }
   }
 `
