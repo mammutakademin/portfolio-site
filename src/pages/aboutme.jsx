@@ -38,7 +38,7 @@ const AboutMePage = ({ data }) => {
 
 export default AboutMePage
 
-export const Head = ({ data }) => <title>About Me Page</title>
+export const Head = () => <title>About Me Page</title>
 
 // Graphql Query
 export const AboutMePageQuery = graphql `

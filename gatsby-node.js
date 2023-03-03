@@ -1,8 +1,8 @@
 const path = require('path')
 
 exports.createPages = async ({graphql, actions}) => {
-    
-    const { data } = await graphql(`
+    // For single projects page
+    const { data: projectData } = await graphql(`
     query getAllSlugs {
         allContentfulWork {
           edges {
@@ -15,11 +15,10 @@ exports.createPages = async ({graphql, actions}) => {
       }
     `)
 
-    // For single projects page
-    data.allContentfulWork.edges.forEach(edge => {
+    projectData.allContentfulWork.edges.forEach(edge => {
         actions.createPage({
             // URL
-            path: '/portfolio/' + edge.node.slug,
+            path: `/portfolio/${edge.node.slug}`,
             // Template
             component: path.resolve('./src/templates/singleWork.jsx'),
             context: { slug: edge.node.slug }
@@ -27,14 +26,28 @@ exports.createPages = async ({graphql, actions}) => {
     })
 
     // For category page
-    data.allContentfulWork.edges.forEach(edge => {
+    const { data: categoryData } = await graphql(`
+    query getAllSlugs {
+        allContentfulWork {
+          edges {
+            node {
+              skill {
+                title
+              }
+            }
+          }
+        }
+      }
+    `)
+
+    categoryData.allContentfulWork.edges.forEach(edge => {
         actions.createPage({
             // URL
-            path: '/portfolio/' + edge.node.projectCategory,
+            path: `/category/${edge.node.skill.title}`,
             // Template
 
             component: path.resolve('./src/templates/categories.jsx'),
-            context: { slug: edge.node.projectCategory }
+            context: { skill: edge.node.skill.title }
         })
     })
 
