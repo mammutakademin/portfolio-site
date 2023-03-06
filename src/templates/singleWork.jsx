@@ -12,7 +12,7 @@ const SingleWorkPage = ({ data }) => {
             <h1>{work.title}</h1>
             <img src={work.featuredImage.url} width={900} alt={work.title} />
             <p>{work.description.description}</p>
-            <a href={work.link} target="_blank" rel="noreferrer">{work.title}</a>
+            <a href={work.link} target="_blank" rel="noreferrer">See it live</a>
             <p>{work.projectCategory}</p>
         </Layout>
     )

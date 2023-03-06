@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import Navbar from "../components/navbar"
-import Footer from "../components/footer"
+import React from 'react'
+import styled from 'styled-components'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 const LayoutWrapper =  styled.main`
   margin: auto;

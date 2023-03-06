@@ -18,7 +18,7 @@ const NotFoundPage = () => {
       <main>
             <Wrapper>
               <h2>Ooops! The page you are looking for has been removed or relocated.</h2>
-              <Link to="/">Go Back</Link>
+              <Link to="/">Go back to Home Page</Link>
             </Wrapper>
       </main>
     )

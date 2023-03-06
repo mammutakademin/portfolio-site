@@ -1,5 +1,4 @@
 import * as React from "react"
-import { useMediaQuery } from "react-responsive"
 import styled from "styled-components"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -7,13 +6,14 @@ import Layout from "../components/layout"
 
 const ProjectsListWrapper = styled.div`
     width: 80%;
-    margin: 20px 20px;
+    margin: 10px 20px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
   }
 `
+
 const Categories = styled.div`
   width: 800px;
   height: 400px;
@@ -21,6 +21,7 @@ const Categories = styled.div`
   justify-content: center;
   gap: 2rem;
 `
+
 const ProjectDetailContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -28,7 +29,7 @@ const ProjectDetailContainer = styled.div`
   margin: 45px 10px;
   width: 400px;
   height: 200px;
-  padding-bottom: 20px;
+  padding-bottom: 60px;
   text-align: center;
   img {
     margin-bottom: 20px;
@@ -52,14 +53,14 @@ const PortfolioPage = ({ data }) => {
   
   return (
       <Layout>
-        <h1>PROJECTS</h1>
+        <h1>Projects</h1>
         <ProjectsListWrapper>
         {data.allContentfulWork.edges.map(({ node }) => (
           <ProjectDetailContainer>
             {/* <GatsbyImage image={node.featuredImage.url} alt={node.featuredImage.url.title} /> */}
 
               <img src={node.featuredImage.url} width="300" alt={node.featuredImage.url.title} />
-              <a href={node.link} target="_blank" rel="noreferrer">{node.title}</a>
+              <h3><a href={node.link} target="_blank" rel="noreferrer">{node.title}</a></h3>
               <p>{node.description.description}</p>
               {/* <p>{node.projectCategory}</p> */}
               <Link to={`/category/${node.skill.title}/`}>{node.skill.title}</Link>

@@ -1,52 +1,75 @@
 import * as React from "react"
 import styled from "styled-components"
 import { Link, graphql } from "gatsby"
-// import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 
-const CategoriesWrapper = styled.div`
-  color: white;
+const ProjectsListWrapper = styled.div`
+    width: 80%;
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`
+
+const Categories = styled.div`
+  width: 800px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+`
+
+const ProjectDetailContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: 0 2rem;
+  margin: 45px 10px;
+  width: 400px;
+  height: 200px;
+  padding-bottom: 20px;
   text-align: center;
-  h1 {
-    font-size: 3rem;
-    margin-top: 3rem;
+  img {
+    margin-bottom: 20px;
   }
   p {
-    font-size: 1.25rem;
+    font-size: 1rem;
+    margin: 0;
+    color: rgb(20, 21, 23);
+    // text-transform: uppercase;
   }
   a {
     text-decoration: none;
+    color: rgb(32, 29, 30);
     &:hover {
-      color: gray;
+      color: rgb(115, 95, 82);
     }
   }
 `
+
 const CategoriesPage = ({ data }) => {
 
   return (
     <main>
       <Layout>
         <h1>Categories</h1>
-            <CategoriesWrapper>
+          <ProjectsListWrapper>
               {data.allContentfulWork.edges.map(({node}) => (
+                <ProjectDetailContainer>
                 <div key={node.id}>
-                  <Link to={`/category/${node.skill.title}/`}>{node.skill.title}</Link>
-            {/* <GatsbyImage image={node.featuredImage.url} alt={node.featuredImage.url.title} /> */}
-            <img src={node.featuredImage.url} width="300" alt={node.featuredImage.url.title} />
+                  {/* <GatsbyImage image={node.featuredImage.url} alt={node.featuredImage.url.title} /> */}
 
-                  {/* <img src={node.featuredImage.gatsbyImage.images.fallback.src} weight={300} alt={node.title} /> */}
+                  <img src={node.featuredImage.gatsbyImage.images.fallback.src} weight={300} alt={node.title} />
                   <h3><a href={node.link} target="_blank" rel="noreferrer">{node.title}</a></h3>
                   <p>{node.description.description}</p>
-                  <p><Link to={`/portfolio/${node.slug}/`}>Details</Link></p>
                   <p><Link to={`/category/${node.skill.title}/`}>{node.skill.title}</Link></p>
+                  <p><Link to={`/portfolio/${node.slug}/`}>Details</Link></p>
                 </div>
+                </ProjectDetailContainer>
               ))}
-            </CategoriesWrapper>
+             </ProjectsListWrapper>
       </Layout>
     </main>
   )
@@ -66,6 +89,7 @@ export const query = graphql`
           link
           featuredImage {
             url
+            gatsbyImage(formats: WEBP, width: 300, outputPixelDensities: [1, 1])
           }
           description {
             description
