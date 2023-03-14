@@ -9,12 +9,10 @@ const AboutMeWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  h1 {
-    margin: 0;
-    font-size: 48px;
-  }
+  
   h2 {
-    font-size: 36px;
+    /* font-size: 36px; */
+    color: whitesmoke;
   }
   @media (max-width: 1080px) {
     max-width: 500px;
@@ -28,8 +26,11 @@ const AboutMePage = ({ data }) => {
     <Layout>
         <AboutMeWrapper>
             <h1>{data.contentfulAboutMe.title}</h1>
-            <h2>{data.contentfulAboutMe.presentationText.presentationText}</h2>
-            <h2>Work Experience</h2>{renderRichText(data.contentfulAboutMe.workExperience)}
+            <br />
+            <p>{data.contentfulAboutMe.presentationText.presentationText}</p>
+            <br />
+            <h2>Work Experience</h2><p>{renderRichText(data.contentfulAboutMe.workExperience)}</p>
+            <br />
             <h2>Education</h2>{renderRichText(data.contentfulAboutMe.educationalAttainment)}
         </AboutMeWrapper>
     </Layout>

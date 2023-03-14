@@ -3,8 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 
-
-const Main = styled.main`
+const Main = styled.div`
   color: white;
   display: flex;
   flex-direction: column;
@@ -12,18 +11,15 @@ const Main = styled.main`
   align-items: center;
   margin: 0 2rem;
   text-align: center;
-  h1 {
+  /* h1 {
     font-size: 64px;
-    margin: 10% 0 0 0;
+    margin: 10% 0;
     color: rgb(32, 29, 30);
-  }
-  p {
-    font-size: 36px;
-  }
-  a {
+  } */
+  /* a {
     text-decoration: none;
-  }
-`
+  } */
+` 
 
 const IndexPage = ({ data }) => {
 
