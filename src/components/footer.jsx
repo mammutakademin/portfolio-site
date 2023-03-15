@@ -7,6 +7,11 @@ const FooterWrapper = styled.footer`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media only screen and (max-width: 700px) {
+        p {
+          font-size: 100%;
+        }
+    }
 `;
 
 const Footer = () => {

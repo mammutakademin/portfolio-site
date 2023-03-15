@@ -11,16 +11,16 @@ const Main = styled.main`
   align-items: center;
   margin: 12px 0;
   text-align: center;
+  img {
+      width: 70%;
+      height: auto;
+    }
   @media only screen and (max-width: 700px) {
     h1 {
       font-size: 3rem;
     }
     h2 {
       font-size: 2rem;
-    }
-    img {
-      width: 100%;
-      height: auto;
     }
   }
 `
@@ -31,6 +31,7 @@ const ContactMePage = ({ data }) => {
     <Layout>
         <Main>
             <h1>{data.contentfulContact.title}</h1>
+            {/* <img src={data.contentfulContact.featuredImage.url} alt={data.contentfulContact.title} /> */}
             <img src={data.contentfulContact.featuredImage.resize.src} alt={data.contentfulContact.title} />
             <br />
             <a href={`mailto:${data.contentfulContact.emailAddress}`}>Email</a>
@@ -51,8 +52,8 @@ export const AboutMePageQuery = graphql `
         contentfulContact {
             title
             featuredImage {
-                resize(format: JPG, height: 300) {
-                    height
+                resize(format: JPG, width: 200) {
+                    width
                     src
                 }
                 url

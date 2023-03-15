@@ -4,29 +4,25 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 
 const Main = styled.main`
-  // color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1rem 2rem;
   text-align: center;
-  h1 {
-    font-size: 64px;
-    margin: 10% 0 0 0;
-    color: white;
-  }
-  // p {
-  //   font-size: 18px;
-  // }
-  a {
-    text-decoration: none;
-    color: rgb(32, 29, 30);
-  }
+  
   .hero-image {
     width: 70%;
     height: auto;
     object-fit: cover;
+  }
+  @media only screen and (max-width: 700px) {
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
   }
 `
 
@@ -48,7 +44,12 @@ const SingleWorkPage = ({ data }) => {
 
 export default SingleWorkPage
 
-export const Head = () => <title>Single Work Page</title>
+export const Head = ({ data }) => (
+  <>
+    <title>Single Work Page</title>
+    <meta name={data.contentfulWork.title} content={data.contentfulWork.description.description} />
+  </>
+) 
 
 export const query = graphql`
   query SingleWorkQuery($slug: String) {

@@ -47,7 +47,10 @@ const PortfolioPage = ({ data }) => {
           <ProjectDetailContainer>
               <h3><a href={node.link} target="_blank" rel="noreferrer">{node.title}</a></h3>
               <img src={node.featuredImage.url} alt={node.featuredImage.url.title} />
-              <span><Link className="details-wrapper" to={`/category/${node.skill.title}/`}>{node.skill.title}</Link><Link className="details-wrapper" to={`/portfolio/${node.slug}/`}>Details</Link></span>
+              <span>
+                <Link className="details-wrapper" to={`/category/${node.skill.title}/`}>{node.skill.title}</Link>
+                <Link className="details-wrapper" to={`/portfolio/${node.slug}/`}>Details</Link>
+              </span>
               <p>{node.description.description}</p>
             </ProjectDetailContainer>
           ))}

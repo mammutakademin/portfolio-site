@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
-import MyLogo from '../images/edith_logo.jpg'
+import MyLogo from '../images/edith_logo.png'
 
 const NavbarContainer = styled.nav`
     width: 100%;
@@ -61,7 +61,8 @@ const NavbarLinkExtended = styled(Link)`
 
 const Logo = styled.img`
     margin: 10px;
-    max-width: 180px;
+    width: 80px;
+    /* max-width: 180px; */
     height: auto;
 `
 
