@@ -1,7 +1,6 @@
 import * as React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 import Layout from "../components/layout"
 
 const Main = styled.main`
@@ -12,6 +11,18 @@ const Main = styled.main`
   align-items: center;
   margin: 12px 0;
   text-align: center;
+  @media only screen and (max-width: 700px) {
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 `
 
 const ContactMePage = ({ data }) => {
@@ -23,9 +34,8 @@ const ContactMePage = ({ data }) => {
             <img src={data.contentfulContact.featuredImage.resize.src} alt={data.contentfulContact.title} />
             <br />
             <a href={`mailto:${data.contentfulContact.emailAddress}`}>Email</a>
-            {/* <a href={data.contentfulContact.githubAccount} target="_blank" rel="noreferrer">Github</a> */}
             <a href={data.contentfulContact.linkedInAccount} target="_blank" rel="noreferrer">LinkedIn</a>
-            {/* <a href={data.contentfulContact.website} target="_blank" rel="noreferrer">Website</a> */}
+            <a href={data.contentfulContact.website} target="_blank" rel="noreferrer">Website</a>
         </Main>
     </Layout>
   )
@@ -44,7 +54,8 @@ export const AboutMePageQuery = graphql `
                 resize(format: JPG, height: 300) {
                     height
                     src
-            }
+                }
+                url
             }
             githubAccount
             linkedInAccount

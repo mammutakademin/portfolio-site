@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 
 const Main = styled.div`
+  height: 80vh;
   color: white;
   display: flex;
   flex-direction: column;
@@ -11,14 +12,18 @@ const Main = styled.div`
   align-items: center;
   margin: 0 2rem;
   text-align: center;
-  /* h1 {
-    font-size: 64px;
-    margin: 10% 0;
-    color: rgb(32, 29, 30);
-  } */
-  /* a {
-    text-decoration: none;
-  } */
+  @media only screen and (max-width: 700px) {
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
 ` 
 
 const IndexPage = ({ data }) => {

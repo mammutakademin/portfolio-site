@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 const ProjectsListWrapper = styled.div`
     width: 80%;
     margin: 0 auto;
-    /* margin: 10px 20px; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -23,6 +22,18 @@ const ProjectDetailContainer = styled.section`
   padding-bottom: 60px;
   img {
     margin-bottom: 20px;
+  }
+  @media only screen and (max-width: 700px) {
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 `
 

@@ -10,13 +10,15 @@ const AboutMeWrapper = styled.div`
   display: flex;
   flex-direction: column;
   
-  h2 {
-    /* font-size: 36px; */
-    color: whitesmoke;
-  }
-  @media (max-width: 1080px) {
+  @media only screen and (max-width: 700px) {
     max-width: 500px;
     padding: 0 2rem;
+    h1 {
+      font-size: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
   }
   `
 
@@ -39,7 +41,13 @@ const AboutMePage = ({ data }) => {
 
 export default AboutMePage
 
-export const Head = () => <title>About Me Page</title>
+export const Head = () => (
+      <>
+            <title>About Me Page</title>
+            <meta name="description" content="A page about me" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </>
+)
 
 // Graphql Query
 export const AboutMePageQuery = graphql `

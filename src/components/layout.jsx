@@ -19,7 +19,6 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-size: 4rem;
-    /* margin: 1rem 0; */
     margin: 10% 0;
     color: rgb(32, 29, 30);
   }
@@ -27,6 +26,7 @@ const GlobalStyles = createGlobalStyle`
   h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    color: whitesmoke;
   }
 
   h3 {
@@ -52,14 +52,13 @@ const GlobalStyles = createGlobalStyle`
     color: rgb(32, 29, 30);
     font-size: 1rem;
     padding: 5px;
-    /* color: rgb(20, 21, 23); */
     &:hover {
       color: rgb(115, 95, 82);
     }
   }
 `
 
-const LayoutWrapper =  styled.main`
+const LayoutWrapper = styled.main`
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -68,8 +67,6 @@ const LayoutWrapper =  styled.main`
   background-color: rgb(139, 148, 142);
   color: rgb(32, 29, 30);
   text-align: center;
-  /* padding: 1rem; */
-  /* margin-bottom: 200px; */
 `;
 
 const Layout = ({ children }) => {
