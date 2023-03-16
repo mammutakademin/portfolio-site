@@ -53,8 +53,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1rem;
     padding: 5px;
     &:hover {
-      color: yellow;
-      /* color: rgb(115, 95, 82); */
+      color: rgb(251, 239, 157);
     }
   }
 `

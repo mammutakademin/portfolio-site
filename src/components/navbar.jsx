@@ -6,7 +6,7 @@ import MyLogo from '../images/edith_logo.png'
 const NavbarContainer = styled.nav`
     width: 100%;
     height: ${(props) => (props.extendNavbar ? "100vh" : "80px")};
-    background-color: black;
+    background-color: rgb(115, 95, 82);
     display: flex;
     flex-direction: column;
 
@@ -62,7 +62,6 @@ const NavbarLinkExtended = styled(Link)`
 const Logo = styled.img`
     margin: 10px;
     width: 80px;
-    /* max-width: 180px; */
     height: auto;
 `
 
