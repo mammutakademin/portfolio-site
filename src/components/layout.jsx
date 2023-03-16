@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-size: 4rem;
-    margin: 10% 0;
+    margin: 6.5% 0;
     color: rgb(32, 29, 30);
   }
 
@@ -53,7 +53,8 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1rem;
     padding: 5px;
     &:hover {
-      color: rgb(115, 95, 82);
+      color: yellow;
+      /* color: rgb(115, 95, 82); */
     }
   }
 `

@@ -12,7 +12,7 @@ const Main = styled.main`
   margin: 12px 0;
   text-align: center;
   img {
-      width: 70%;
+      width: 80%;
       height: auto;
     }
   @media only screen and (max-width: 700px) {
@@ -31,7 +31,6 @@ const ContactMePage = ({ data }) => {
     <Layout>
         <Main>
             <h1>{data.contentfulContact.title}</h1>
-            {/* <img src={data.contentfulContact.featuredImage.url} alt={data.contentfulContact.title} /> */}
             <img src={data.contentfulContact.featuredImage.resize.src} alt={data.contentfulContact.title} />
             <br />
             <a href={`mailto:${data.contentfulContact.emailAddress}`}>Email</a>
