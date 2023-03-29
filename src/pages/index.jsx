@@ -12,18 +12,18 @@ const Main = styled.div`
   align-items: center;
   margin: 0 2rem;
   text-align: center;
-  @media only screen and (max-width: 700px) {
+  /* @media only screen and (max-width: 700px) {
     h1 {
-      font-size: 3rem;
+      font-size: 2.5rem;
     }
     h2 {
-      font-size: 2rem;
+      font-size: 1rem;
     }
     img {
-      width: 100%;
+      width: 80%;
       height: auto;
     }
-  }
+  } */
 ` 
 
 const IndexPage = ({ data }) => {

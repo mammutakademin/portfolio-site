@@ -16,14 +16,14 @@ const Main = styled.main`
     height: auto;
     object-fit: cover;
   }
-  @media only screen and (max-width: 700px) {
+  /* @media only screen and (max-width: 700px) {
     h1 {
       font-size: 3rem;
     }
     h2 {
       font-size: 2rem;
     }
-  }
+  } */
 `
 
 const SingleWorkPage = ({ data }) => {

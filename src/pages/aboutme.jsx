@@ -13,12 +13,12 @@ const AboutMeWrapper = styled.div`
   @media only screen and (max-width: 700px) {
     max-width: 500px;
     padding: 0 2rem;
-    h1 {
+    /* h1 {
       font-size: 3rem;
     }
     h2 {
       font-size: 2rem;
-    }
+    } */
   }
   `
 

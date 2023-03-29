@@ -11,7 +11,7 @@ const Main = styled.main`
   align-items: center;
   margin: 12px 0;
   text-align: center;
-  img {
+  /* img {
       width: 80%;
       height: auto;
     }
@@ -22,7 +22,7 @@ const Main = styled.main`
     h2 {
       font-size: 2rem;
     }
-  }
+  } */
 `
 
 const ContactMePage = ({ data }) => {
