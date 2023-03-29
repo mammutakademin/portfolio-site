@@ -11,18 +11,6 @@ const Main = styled.main`
   align-items: center;
   margin: 12px 0;
   text-align: center;
-  /* img {
-      width: 80%;
-      height: auto;
-    }
-  @media only screen and (max-width: 700px) {
-    h1 {
-      font-size: 3rem;
-    }
-    h2 {
-      font-size: 2rem;
-    }
-  } */
 `
 
 const ContactMePage = ({ data }) => {

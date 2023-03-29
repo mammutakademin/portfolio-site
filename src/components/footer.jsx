@@ -9,7 +9,7 @@ const FooterWrapper = styled.footer`
   justify-content: center;
   @media only screen and (max-width: 700px) {
         p {
-          font-size: 100%;
+          font-size: 70%;
         }
     }
 `;

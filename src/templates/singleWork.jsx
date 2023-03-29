@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/layout"
 
@@ -16,14 +16,6 @@ const Main = styled.main`
     height: auto;
     object-fit: cover;
   }
-  /* @media only screen and (max-width: 700px) {
-    h1 {
-      font-size: 3rem;
-    }
-    h2 {
-      font-size: 2rem;
-    }
-  } */
 `
 
 const SingleWorkPage = ({ data }) => {
@@ -36,7 +28,7 @@ const SingleWorkPage = ({ data }) => {
             <img className="hero-image" src={work.featuredImage.url} width={400} alt={work.title} />
             <p>{work.description.description}</p>
             <p><a href={work.link} target="_blank" rel="noreferrer">See it live</a></p>
-            <p>{work.projectCategory}</p>
+            <p><Link to={`/category/${work.skill.title}/`}>{work.skill.title}</Link></p>            
           </Main>
         </Layout>
     )
@@ -63,6 +55,9 @@ export const query = graphql`
         description
       }
       projectCategory
+      skill {
+        title
+      }
     }
   }
 `

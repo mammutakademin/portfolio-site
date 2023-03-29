@@ -13,12 +13,6 @@ const AboutMeWrapper = styled.div`
   @media only screen and (max-width: 700px) {
     max-width: 500px;
     padding: 0 2rem;
-    /* h1 {
-      font-size: 3rem;
-    }
-    h2 {
-      font-size: 2rem;
-    } */
   }
   `
 
@@ -31,7 +25,9 @@ const AboutMePage = ({ data }) => {
             <br />
             <p>{data.contentfulAboutMe.presentationText.presentationText}</p>
             <br />
+            <br />
             <h2>Work Experience</h2><p>{renderRichText(data.contentfulAboutMe.workExperience)}</p>
+            <br />
             <br />
             <h2>Education</h2>{renderRichText(data.contentfulAboutMe.educationalAttainment)}
         </AboutMeWrapper>

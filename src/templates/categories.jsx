@@ -4,7 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 
 const ProjectsListWrapper = styled.div`
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -21,6 +21,7 @@ const ProjectDetailContainer = styled.section`
   padding-bottom: 80px;
   img {
     margin-bottom: 20px;
+    width: 100%;
   }
 `
 
@@ -32,7 +33,7 @@ const CategoriesPage = ({ data }) => {
           <ProjectsListWrapper>
               {data.allContentfulWork.edges.map(({node}) => (
                 <ProjectDetailContainer>
-                    <h3><a href={node.link} target="_blank" rel="noreferrer">{node.title}</a></h3>
+                    <a href={node.link} target="_blank" rel="noreferrer"><h2>{node.title}</h2></a>
                     <img src={node.featuredImage.url} alt={node.featuredImage.url.title} />
                     <span><Link className="details-wrapper" to={`/category/${node.skill.title}/`}>{node.skill.title}</Link><Link className="details-wrapper" to={`/portfolio/${node.slug}/`}>Details</Link></span>
                     <p>{node.description.description}</p>

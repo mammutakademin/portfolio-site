@@ -24,18 +24,18 @@ const GlobalStyles = createGlobalStyle`
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 0.5rem;
     color: whitesmoke;
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
   }
 
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #333;
     margin-top: 1rem;
     text-align: justify;
@@ -56,11 +56,21 @@ const GlobalStyles = createGlobalStyle`
       color: rgb(251, 239, 157);
     }
   }
+
   @media only screen and (max-width: 700px) {
     h1 {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
     }
     h2 {
+      font-size: 2rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    a {
       font-size: 1rem;
     }
     img {
