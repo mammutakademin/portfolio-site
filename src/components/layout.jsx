@@ -17,6 +17,23 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
   }
 
+  body {
+    position: relative;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  body::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background-color: violet;
+    opacity: 0.06;
+    z-indez: -1
+  }
+
   h1 {
     font-size: 4rem;
     margin: 6.5% 0;
